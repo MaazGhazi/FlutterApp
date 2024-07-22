@@ -5,7 +5,7 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: Lineargradient(),
+        body: Lineargradient(Colors.black, Colors.white),
       ),
     ),
   );
@@ -13,20 +13,23 @@ void main() {
 
 
 class Lineargradient extends StatelessWidget {
-  const Lineargradient({super.key});
+  const Lineargradient(this.colour1, this.colour2,{super.key});
+  final Color colour1;
+  final Color colour2;
   @override
   Widget build(context) {
     return Container(
           decoration: BoxDecoration(
             gradient:  LinearGradient(
-              colors: const [Colors.red, Colors.blue],
+              colors: [colour1, colour2 ],
               begin: first,
               end: second, 
               ),
-            
-
           ),
-          child:  CustomeWidget(),
+          child:  Center(
+            child: Image.asset('assets/images/dice-1.png', width: 300, ),
+          ),
+
         );
   }
 }
