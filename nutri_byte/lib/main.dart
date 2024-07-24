@@ -11,13 +11,13 @@ void main() {
   );
 }
 
-
+//ttysts 
 class Lineargradient extends StatelessWidget {
   const Lineargradient(this.colour1, this.colour2,{super.key});
   final Color colour1;
   final Color colour2;
   @override
-  Widget build(context) {
+  Widget build(context) { 
     return Container(
           decoration: BoxDecoration(
             gradient:  LinearGradient(
