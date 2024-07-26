@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
-
 class Purple extends StatelessWidget {
-  const Purple({super.key});
+  const Purple(this.startquiz, {super.key});
+ 
+  final void Function() startquiz;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,7 +16,7 @@ class Purple extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               // Define the action when the button is pressed
-              print("Button Pressed!");
+              startquiz();
             },
             child: const Text("Start Quiz!"),
           ),
