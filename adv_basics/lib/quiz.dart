@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:adv_basics/startscreen.dart';
+import 'package:adv_basics/questions.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -13,14 +14,20 @@ class Quiz extends StatefulWidget {
 }
   
 class _QuizState extends State<Quiz> {
+  Widget activeScreen = const Purple();
+  void changeScreen() {
+    setState(() {
+      activeScreen = const Questions();
+    });
+  }
   @override
   Widget build(context) {
     // TODO: implement build
-    return const MaterialApp(
+    return MaterialApp(
     home: Scaffold(
       body: Center(
         
-        child: Purple(),
+      child: activeScreen,
       ),
       backgroundColor: Color.fromARGB(255, 77, 0, 90),
     ),
